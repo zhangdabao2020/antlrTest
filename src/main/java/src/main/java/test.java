@@ -34,7 +34,7 @@ public class test {
        // System.out.println(tree.);
        // System.out.println(tree.toString(CBpar));
 
-        //实数 计算
+        //利用属性文法 计算 实数的值
           String real = "13.6875";
           CharStream input1 = CharStreams.fromString(real);
         RealNumberLexer realNumLex = new RealNumberLexer(input1);
