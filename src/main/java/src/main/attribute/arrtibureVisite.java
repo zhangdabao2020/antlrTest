@@ -13,7 +13,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
         //return super.visitBinaryNum(ctx);
         System.out.println("visit BinaryNum:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         Double a = visit(ctx.getChild(0)); // 整数部分
         Double b =visit(ctx.getChild(2)) ;//小数部分
         return  a + b ;
@@ -25,7 +25,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
     public Double visitXiaoshu(CBinaryNumParser.XiaoshuContext ctx) {
         System.out.println("visit Xiaoshu:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
 //        if(ctx.getChild(0).getClass().getName().contains("Danti0")){
 //            len = 1;
 //        }
@@ -46,7 +46,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
     public Double visitZhengshu(CBinaryNumParser.ZhengshuContext ctx) {
         System.out.println("visit Zhengshu:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         Integer pos = ctx.depth() -1;  //位置就是深度-1
        // List<ParseTree> list =  ctx.children;
         //遍历节点
@@ -58,7 +58,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
     public Double visitDanti0(CBinaryNumParser.Danti0Context ctx) {
         System.out.println("visit Danti0:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         len = 1;  // 修改 位置 为 1；
         return  visit(ctx.getChild(0));
     }
@@ -67,7 +67,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
     public Double visitDanti1(CBinaryNumParser.Danti1Context ctx) {
         System.out.println("visit Danti1:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
        // Integer pos = ctx.depth() -2;
 
         return visit(ctx.getChild(0)); //访问子节点
@@ -75,7 +75,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
 
     @Override
     public Double visitZero(CBinaryNumParser.ZeroContext ctx){
-        System.out.println(ctx.depth());
+
         String classname = ctx.parent.getClass().getName();
         if(classname.contains("Xiaoshu")){
             len = len +1;
@@ -85,7 +85,7 @@ public class arrtibureVisite extends CBinaryNumBaseVisitor<Double> {
 
     @Override
     public Double visitOne(CBinaryNumParser.OneContext ctx) {
-        System.out.println(ctx.depth());
+
        /// if(ctx.getParent().)
       //  if(ctx.t)
         //整数部分

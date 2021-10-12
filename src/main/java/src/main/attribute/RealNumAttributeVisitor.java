@@ -6,7 +6,7 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     public Double visitRealnum(RealNumberParser.RealnumContext ctx) {
         System.out.println("visitRealnum");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         Double a = visit(ctx.getChild(0)); // 整数部分
         Double b =visit(ctx.getChild(2)) ;//小数部分
         return  a + b ;
@@ -16,7 +16,7 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     public Double visitZhengshu(RealNumberParser.ZhengshuContext ctx) {
         System.out.println("visit Zhengshu:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         return  visit(ctx.getChild(0))+visit(ctx.getChild(1));
     }
 
@@ -24,7 +24,7 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     public Double visitXiaoshu(RealNumberParser.XiaoshuContext ctx) {
         System.out.println("visit Xiaoshu:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         Double part1 = visit(ctx.getChild(0));
         Double part2 = visit(ctx.getChild(1));
         return  part1 +part2;
@@ -34,7 +34,7 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     public Double visitDanti0(RealNumberParser.Danti0Context ctx) {
         System.out.println("visit Danti0:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         len = 1;  // 修改 位置 为 1；
         return  visit(ctx.getChild(0));
     }
@@ -43,19 +43,18 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     public Double visitDanti1(RealNumberParser.Danti1Context ctx) {
         System.out.println("visit Danti1:");
         System.out.println(ctx.getText());
-        System.out.println(ctx.depth());
+
         return visit(ctx.getChild(0)); //访问子节点
     }
 
     @Override
     public Double visitNum(RealNumberParser.NumContext ctx) {
-        System.out.println(ctx.depth());
-        /// if(ctx.getParent().)
-        //  if(ctx.t)
+
+
         //整数部分
         Integer pos = 0;
         String classname = ctx.parent.getClass().getName();
-        //String classname = ctx.parent.getClass().getName();
+
         if(classname.contains("Xiaoshu")){
             len = len +1;
         }
