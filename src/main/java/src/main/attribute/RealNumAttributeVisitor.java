@@ -4,8 +4,8 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
     private  static  Integer len = 1;
     @Override
     public Double visitRealnum(RealNumberParser.RealnumContext ctx) {
-        System.out.println("visitRealnum");
-        System.out.println(ctx.getText());
+        System.out.println("visitRealnum"+ctx.getText());
+       // System.out.println(ctx.getText());
 
         Double a = visit(ctx.getChild(0)); // 整数部分
         Double b =visit(ctx.getChild(2)) ;//小数部分
@@ -14,16 +14,16 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
 
     @Override
     public Double visitZhengshu(RealNumberParser.ZhengshuContext ctx) {
-        System.out.println("visit Zhengshu:");
-        System.out.println(ctx.getText());
+        System.out.println("visit Zhengshu:"+ctx.getText());
+       // System.out.println(ctx.getText());
 
         return  visit(ctx.getChild(0))+visit(ctx.getChild(1));
     }
 
     @Override
     public Double visitXiaoshu(RealNumberParser.XiaoshuContext ctx) {
-        System.out.println("visit Xiaoshu:");
-        System.out.println(ctx.getText());
+        System.out.println("visit Xiaoshu:"+ctx.getText());
+        //System.out.println(ctx.getText());
 
         Double part1 = visit(ctx.getChild(0));
         Double part2 = visit(ctx.getChild(1));
@@ -32,8 +32,8 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
 
     @Override
     public Double visitDanti0(RealNumberParser.Danti0Context ctx) {
-        System.out.println("visit Danti0:");
-        System.out.println(ctx.getText());
+        System.out.println("visit Danti0:"+ctx.getText());
+        //System.out.println(ctx.getText());
 
         len = 1;  // 修改 位置 为 1；
         return  visit(ctx.getChild(0));
@@ -41,15 +41,16 @@ public class RealNumAttributeVisitor extends  RealNumberBaseVisitor<Double> {
 
     @Override
     public Double visitDanti1(RealNumberParser.Danti1Context ctx) {
-        System.out.println("visit Danti1:");
-        System.out.println(ctx.getText());
+        System.out.println("visit Danti1:"+ctx.getText());
+        //System.out.println(ctx.getText());
 
         return visit(ctx.getChild(0)); //访问子节点
     }
 
     @Override
     public Double visitNum(RealNumberParser.NumContext ctx) {
-
+        System.out.println("visit Num:"+ctx.getText());
+        //System.out.println(ctx.getText());
 
         //整数部分
         Integer pos = 0;

@@ -2,9 +2,10 @@ grammar CBinaryNum;
 
 binaryNum  : binarydig  '.'  fractiondig ;
 
-fractiondig  :  fractiondig bit #xiaoshu
+fractiondig  :  fractiondig bit  #xiaoshu
 | bit  #danti0
  ;
+
 binarydig   :    binarydig bit  #zhengshu
 | bit #danti1
 ;

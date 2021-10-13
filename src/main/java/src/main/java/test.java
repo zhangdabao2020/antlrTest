@@ -25,12 +25,13 @@ public class test {
 
         arrtibureVisite atrVisit = new arrtibureVisite();
         Double result =   atrVisit.visit(tree);
+        // tree.accept()
         System.out.println("二进制的值为："+result);
 
 
         //利用属性文法 计算 实数的值
-          String real = "13.6875";
-          CharStream input1 = CharStreams.fromString(real);
+        String real = "13.6875";
+        CharStream input1 = CharStreams.fromString(real);
         RealNumberLexer realNumLex = new RealNumberLexer(input1);
         CommonTokenStream RealNumTokens = new CommonTokenStream(realNumLex);
         RealNumberParser realNumPar = new RealNumberParser(RealNumTokens);
