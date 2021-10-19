@@ -43,7 +43,13 @@ public class test {
         System.out.println("实数字符串的值是："+RealNumVal);*/
 
         //解析lambda表达式
-        String s = "((L x y (add x y )) 5 8 )";
+        String l1 = "((L x y (add x y )) 5 8 )";
+        String t2 = "(  L m ( sqr (L n (add m n )) 2))";
+        String t3  = "((L x ( L y (add x y ))) 5 8 )";
+        String t4 = "( ( (L x ( L y (add x y ))) 5 ) 8 )";
+        String t5 = "( ( (L x ( L y ( (add x) y ))) 5 ) 8 )";
+        String t6 = "( ( L m(sqr((L n ( (add m) n))2)))  4 )";
+        String s = t6;
         System.out.println("输入表达式："+s);
         CharStream input = CharStreams.fromString(s);
         lambdaLexer lamlex = new lambdaLexer(input);
