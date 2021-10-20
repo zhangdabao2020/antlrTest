@@ -48,6 +48,16 @@ public interface lambdaListener extends ParseTreeListener {
 	 */
 	void exitApplication(lambdaParser.ApplicationContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link lambdaParser#appfunction}.
+	 * @param ctx the parse tree
+	 */
+	void enterAppfunction(lambdaParser.AppfunctionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link lambdaParser#appfunction}.
+	 * @param ctx the parse tree
+	 */
+	void exitAppfunction(lambdaParser.AppfunctionContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link lambdaParser#scope}.
 	 * @param ctx the parse tree
 	 */

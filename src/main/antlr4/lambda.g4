@@ -5,12 +5,14 @@ expression
     ;
 identifier:VARIABLE;
 function_
-    : '(' 'L' identifier+  scope ')'
+    : '(' 'L' identifier  scope ')'
     ;
 
 application
-    : '(' expression+  expression ')'
+    :  '(' expression  expression ')'  | '(' appfunction expression ')'
     ;
+appfunction
+    : expression expression ;
 scope
     : expression
     ;

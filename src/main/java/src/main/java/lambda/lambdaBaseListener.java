@@ -64,6 +64,18 @@ public class lambdaBaseListener implements lambdaListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterAppfunction(lambdaParser.AppfunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitAppfunction(lambdaParser.AppfunctionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterScope(lambdaParser.ScopeContext ctx) { }
 	/**
 	 * {@inheritDoc}

@@ -35,6 +35,12 @@ public interface lambdaVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitApplication(lambdaParser.ApplicationContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link lambdaParser#appfunction}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitAppfunction(lambdaParser.AppfunctionContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link lambdaParser#scope}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
